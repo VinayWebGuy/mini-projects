@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.speaker {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.action {
+    margin: 10px 0;
+    font-size: 0.8rem;
+}
+.record-btn{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.record-btn i{
+    font-size: 2rem;
+}
+#output{
+    height: 350px;
+    width: 350px;
+    margin-top: 20px;
+    border: 2px dashed sienna;
+    padding: 7px 15px;
+}

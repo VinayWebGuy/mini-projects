@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Speech to text</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="speaker">
+        <button onclick="runSpeechRecog()" class="record-btn">
+            <i class="fa-solid fa-microphone"></i>
+        </button>
+    </div>
+    <p class="action"></p>
+    <div id="output" class=""></div>
+    <script>
+        runSpeechRecog = () => {
+            document.getElementById("output").innerHTML = "Loading text...";
+            var output = document.getElementById('output');
+            var action = document.getElementById('action');
+            let recognization = new webkitSpeechRecognition();
+            recognization.onstart = () => {
+                action.innerHTML = "Listening...";
+            }
+            recognization.onresult = (e) => {
+                var transcript = e.results[0][0].transcript;
+                output.innerHTML = transcript;
+                output.classList.remove("hide")
+                action.innerHTML = "";
+            }
+            recognization.start();
+        }
+    </script>
+</body>
+
+</html>
