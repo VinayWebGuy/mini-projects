@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Reveal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2>Scroll to Reveal</h2>
+    </section>
+    <div class="container"></div>
+
+    <script>
+
+        
+      
+
+       for(let i = 1; i < 60; i++) {
+        let box = document.createElement("div");
+        box.classList.add('box')
+        document.querySelector('.container').appendChild(box)
+       }
+
+
+       let boxes = document.querySelectorAll('.box');
+       function scrollTrigger() {
+           boxes.forEach(b => {
+            if(b.offsetTop < window.scrollY) {
+                b.classList.add('active')
+            }
+            else {
+                b.classList.remove('active')
+            }
+           })
+       }
+
+       let randomColorBlock = document.querySelectorAll('.box');
+       function randomColor() {
+            let str = "1234567890abcdef";
+            let colorLength = 6;
+            let color = "";
+
+            for(let i = 1; i <= colorLength; i++) {
+                let randomColors = Math.floor(Math.random() * str.length)
+
+                color += str.substring(randomColors, randomColors+1);
+            }
+            return "#"+color;
+        }
+
+        
+        function addColor() {
+            randomColorBlock.forEach(e => {
+                e.style.background = randomColor();
+            })
+        }
+        
+       window.addEventListener('scroll', function() {
+            scrollTrigger();
+        })
+        addColor();
+    </script>
+</body>
+</html>

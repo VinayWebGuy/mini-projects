@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+:root {
+    --clr: #2c363f;
+}
+body {
+    background-color: var(--clr);
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #2196f3;
+    padding: 10px  50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    position: relative;
+    font-size: 2em;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+header nav {
+    display: flex;
+    gap: 10px;
+}
+header nav a {
+    position: relative;
+    text-decoration: none;
+    padding: 12px 20px;
+    color: #fff;
+    letter-spacing: .1em;
+}
+header nav #indicator {
+    position: absolute;
+    width: 90px;
+    height: 59px;
+    background-color: var(--clr);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: left .5s, width .5s;
+}
+header nav #indicator::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -30px;
+    bottom: 0;
+    background-color: transparent;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0 5px var(--clr);
+}
+header nav #indicator::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -30px;
+    bottom: 0;
+    background-color: transparent;
+    border-bottom-left-radius: 20px;
+    box-shadow: -5px 5px 0 5px var(--clr);
+}

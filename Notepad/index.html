@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">SaveMe</div>
+    </header>
+    <div class="notepad-box">
+       <div class="notepad">
+        <div class="tools">
+            <div class="fontSize tool">
+                <select class="font-size">
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option selected value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="22">22</option>
+                    <option value="24">24</option>
+                    <option value="26">26</option>
+                    <option value="28">28</option>
+                    <option value="30">30</option>
+                    <option value="32">32</option>
+                    <option value="34">34</option>
+                    <option value="36">36</option>
+                    <option value="38">38</option>
+                    <option value="40">40</option>
+                    <option value="42">42</option>
+                    <option value="44">44</option>
+                    <option value="46">46</option>
+                    <option value="48">48</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="pickColor tool">
+                <input type="color" class="color-picker" >
+            </div>
+            <div class="bold tool">
+                <i class="fa-solid fa-bold"></i>
+            </div>
+            <div class="italic tool">
+                <i class="fa-solid fa-italic"></i>
+            </div>
+            <div class="underline tool">
+                <i class="fa-solid fa-underline"></i>
+            </div>
+            <div class="align align-left active tool">
+                <i class="fa-solid fa-align-left"></i>
+            </div>
+            <div class="align align-center tool">
+                <i class="fa-solid fa-align-center"></i>
+            </div>
+            <div class="align align-right tool">
+                <i class="fa-solid fa-align-right"></i>
+            </div>
+            <div class="align align-justify tool">
+                <i class="fa-solid fa-align-justify"></i>
+            </div>
+            <div class="maximize tool">
+                <i class="fa-solid fa-maximize"></i>
+            </div>
+            <div class="notepad-details">
+                <i class="fa-solid fa-question"></i>
+            </div>
+        </div>
+        <div class="popup hide">
+            <div class="popup-content">
+                <div class="content">
+                    This is a simple notepad editor created with HTML, CSS and JAVSCRIPT by <span>Vinay Munjal</span>. For source code, kindly contact <span>vinaywebguy@gmail.com</span>.
+                </div>
+                <div class="close-popup"><i class="fa-solid fa-times"></i></div>
+            </div>
+        </div>
+        <div class="lockscreen hide">
+            <i class="fa-solid fa-lock"></i>
+        </div>
+        <div contenteditable="true" autofocus="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="type">
+
+        </div>
+       </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

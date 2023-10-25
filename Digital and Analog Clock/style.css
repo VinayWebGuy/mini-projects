@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Oswald;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFF5E4;
+    cursor: none;
+}
+.clock {
+    display: flex;
+    position: relative;
+    gap: 20px;
+    font-weight: 600;
+}
+.clock .digital {
+    width: 120px;
+    position: relative;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdeded;
+    border-radius: 30px;
+    box-shadow: 20px 20px 20px -10px rgba(0,0,0,0.15),
+    inset 15px 15px 15px 10px rgba(255, 255, 255, .5),
+    -15px -15px 35px rgba(255, 255, 255, .35),
+    inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+}
+.screen {
+    position: absolute;
+    inset: 20px;
+    background-color: #FF9494;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px 0 #FF949466,
+    inset 5px 5px 5px rgba(255, 255, 255, .35),
+    -6px -6px 10px rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.screen::before {
+    content: attr(data-txt);
+    position: absolute;
+    bottom: -21px;
+    left: 50%;
+    transform: translateX(-50%) scale(.7);
+    letter-spacing: .1em;
+    color: #333;
+}
+.digital .time {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0 ;
+}
+.time div {
+    font-size: 2.9rem;
+    position: relative;
+    color: var(--clr);
+    letter-spacing: .1em;
+    margin-left: .1em ;
+}
+.clock .digital:last-child::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #FF9494;
+    border: 2px solid #fff;
+    z-index: 9999;
+    border-radius: 50%;
+}
+.clock .digital:last-child::after {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    background-color: #FF9494;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px 0 #FF949466,
+    inset 5px 5px 5px rgba(255, 255, 255, .35),
+    -6px -6px 10px rgba(255, 255, 255, 1);
+}
+#ampm {
+    position: absolute; 
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(.7);
+    letter-spacing: .1em;
+    color: #333;
+}
+.box {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: 999;
+}
+.box::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 30px;
+    background-color: var(--clr);
+    border-radius: 4px;
+}
+.box:nth-child(1):after {
+    height: 20px;
+    width: 4px;
+}
+.box:nth-child(2):after {
+    height: 25px;
+    width: 3px;
+}

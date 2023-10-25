@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li><a href="#" data-text="Home">
+            <img src="images/home.png" alt="">
+            Home</a></li>
+        <li><a href="#" data-text="About">
+            <img src="images/about.png" alt="">
+            About</a></li>
+        <li><a href="#" data-text="Services">
+            <img src="images/services.png" alt="">
+            Services</a></li>
+        <li><a href="#" data-text="Portfolio">
+            <img src="images/portfolio.png" alt="">
+            Portfolio</a></li>
+        <li><a href="#" data-text="Team">
+            <img src="images/team.png" alt="">
+            Team</a></li>
+        <li><a href="#" data-text="Contact">
+            <img src="images/contact.png" alt="">
+            Contact</a></li>
+            <div class="cursor"></div>
+    </ul>
+
+    <script>
+        let pos = document.documentElement;
+        pos.addEventListener('mousemove', (e) => {
+            pos.style.setProperty("--x", e.clientX + "px");
+            pos.style.setProperty("--y", e.clientY + "px");
+        })
+    </script>
+</body>
+</html>
