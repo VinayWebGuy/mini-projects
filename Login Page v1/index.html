@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Login to Proceed</h2>
+        <div class="tabs">
+            <div class="tab active" id="email-tab">Email</div>
+            <div class="tab" id="mobile-tab">Mobile</div>
+        </div>
+        <form class="email tab-box active">
+            <div class="form-group">
+                <input type="text" required>
+                <span class="icon"><i class="fa fa-user"></i> Email</span>
+            </div>
+            <div class="form-group">
+                <input type="password" required>
+                <span class="icon"><i class="fa fa-lock"></i> Password</span>
+            </div>
+            <div class="form-group">
+                <button>Login</button>
+            </div>
+            <div class="links">
+                <a href="">Forget Password</a>
+                <a href="">Sign Up</a>
+            </div>
+        </form>
+        <form class="otp tab-box">
+            <div class="form-group">
+                <input type="number"  required>
+                <span class="icon"><i class="fa fa-phone"></i> Mobile</span>
+            </div>
+            <div class="form-group otp-box">
+                <input type="number" required class="otp-input">
+                <span class="icon"><i class="fa fa-key"></i> Otp</span>
+            </div>
+            <div class="form-group">
+                <button  class="send-otp-btn">Send OTP</button>
+                <button  class="login-btn d-none">Login</button>
+            </div>
+            <div class="links">
+                <a href="">Forget Mobile</a>
+                <a href="">Sign Up</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
