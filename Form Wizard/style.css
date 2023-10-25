@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+}
+.container{
+    position: relative;
+}
+.whole-form{
+    min-height: 200px;
+    width: 400px;
+    background-color: #fff;
+    padding: 18px;
+    border-radius: 10px;
+}
+.whole-form h2{
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.page{
+    width: 100%;
+    position: relative;
+    display: none;
+}
+.page.active{
+    display: initial;
+}
+.page h4{
+    font-weight: 600;
+    margin: 14px 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.form-group{
+    margin: 12px 0;
+}
+.form-group.checkbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.form-group input, .form-group select{
+    width: 100%;
+    padding: 5px 8px;
+    box-shadow: none;
+    outline: none;
+}
+.form-group input[type="checkbox"]{
+    width: 40px !important;
+}
+button{
+    border: none;
+    outline: none;
+    background-color: #2193b0;
+    color: #fff;
+    padding: 7px 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+.buttons{
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.buttons.one button{
+    width: 100%;
+}
+.buttons.two button{
+    width: 40%;
+}
+.steps{
+    display: flex;
+    justify-content: space-between;
+}
+.step{
+    background-color: transparent;
+    border: 2px solid #2193b0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #2193b0;
+    position: relative;
+}
+.step.active{
+    color: #fff;
+    background-color: #2193b0;
+}
+.step::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 84px;
+    background-color: #2193b0;
+    right: -84px;
+}
+.step:last-child::after{
+    content: '';
+    height: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

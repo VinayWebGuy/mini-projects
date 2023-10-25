@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Wizard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="whole-form">
+            <h2>Registration Form</h2>
+            <div class="steps">
+                <div class="step" id="step-1">1</div>
+                <div class="step" id="step-2">2</div>
+                <div class="step" id="step-3">3</div>
+                <div class="step" id="step-4">4</div>
+            </div>
+            <form action="">
+            <div class="page active" id="page-1">
+                <h4>Basic Info</h4>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="name">Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="buttons one">
+                    <button type="buttton" id="next-2">Next</button>
+                </div>
+            </div>
+            <div class="page" id="page-2">
+                <h4>Contact Info</h4>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="number">
+                </div>
+                <div class="buttons two">
+                    <button type="button" id="prev-1">Previous</button>
+                    <button type="button" id="next-3">Next</button>
+                </div>
+            </div>
+            <div class="page" id="page-3">
+                <h4>Login Info</h4>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password">
+                </div>
+                <div class="buttons two">
+                    <button type="button" id="prev-2">Previous</button>
+                    <button type="button" id="next-4">Next</button>
+                </div>
+            </div>
+            <div class="page" id="page-4">
+                <h4>Terms amd Conditions</h4>
+                <div class="form-group checkbox">
+                    <label for="check">Agree to all our term and conditions?</label>
+                    <input type="checkbox" id="check">
+                </div>
+                <div class="buttons two">
+                    <button type="button" id="prev-3">Previous</button>
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
