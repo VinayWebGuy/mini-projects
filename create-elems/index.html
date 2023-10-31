@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Elements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="input-area area">
+        <h3>Create Elements</h3>
+        <div>
+            <label for="elementSelect">Select Element Type:</label>
+            <select id="elementSelect" onchange="toggleInputs()">
+                <option hidden value=""></option>
+                <option value="div">div</option>
+                <option value="p">p</option>
+                <option value="h1">h1</option>
+                <option value="h2">h2</option>
+                <option value="h3">h3</option>
+                <option value="h4">h4</option>
+                <option value="h5">h5</option>
+                <option value="h6">h6</option>
+                <option value="section">section</option>
+                <option value="main">main</option>
+                <option value="aside">aside</option>
+                <option value="header">header</option>
+                <option value="footer">footer</option>
+                <option value="nav">nav</option>
+                <option value="i">i</option>
+                <option value="span">span</option>
+                <option value="img">img</option>
+                <option value="a">a</option>
+                <option value="input">input</option>
+                <option value="textarea">textarea</option>
+            </select>
+            <br>
+            <label for="classInput">Class:</label>
+            <input type="text" id="classInput">
+            <label for="idInput">ID:</label>
+            <input type="text" id="idInput">
+            <br>
+            <label for="contentInput" id="contentLabel">Content:</label>
+            <input type="text" id="contentInput">
+            <label for="linkInput" id="linkLabel">Link:</label>
+            <input type="text" id="linkInput">
+            <label for="inputType" id="inputTypeLabel" style="display: none">Input Type:</label>
+            <select id="inputType" style="display: none">
+                <option value="text">text</option>
+                <option value="email">email</option>
+                <option value="password">password</option>
+                <option value="date">date</option>
+                <option value="color">color</option>
+                <option value="time">time</option>
+                <option value="submit">submit</option>
+                <option value="button">button</option>
+            </select>
+        </div>
+        <button onclick="generateCode()">Create</button>
+    </div>
+
+    <div class="output-area area">
+        <textarea id="generatedCode" rows="10" cols="50" readonly></textarea>
+        <button id="copyButton" onclick="copyToClipboard()">Copy</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
