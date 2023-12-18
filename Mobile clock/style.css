@@ -1,0 +1,42 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+}
+.mobile {
+    font-size: 6rem;
+    color: #fff;
+    transform: rotate(90deg);
+    display: flex;
+    gap: 30px;
+}
+.seconds {
+    position: relative;
+}
+
+.clock-type {
+    transform: rotate(90deg);
+    margin: 20px 0;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    color: #fff;
+}
+.clock-type > div {
+    cursor: pointer;
+    margin: 8px 0;
+    padding: 5px;
+}
+.clock-type > div.active {
+    background-color: #fff;
+    color: #000;
+}

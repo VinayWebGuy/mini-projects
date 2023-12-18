@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Clock</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+}
+.mobile {
+    font-size: 6rem;
+    color: #fff;
+    transform: rotate(90deg);
+    display: flex;
+    gap: 30px;
+}
+.clock-type {
+    transform: rotate(90deg);
+    margin: 20px 0;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    color: #fff;
+    opacity: .5;
+}
+.clock-type > div {
+    cursor: pointer;
+    margin: 8px 0;
+    padding: 5px;
+}
+.clock-type > div.active {
+    background-color: #fff;
+    color: #000;
+}
+#milliseconds {
+    position: absolute;
+    font-size: 1.7rem !important;
+    opacity: .5;
+    right: 0;
+    bottom: -15px;
+}
+    </style>
+</head>
+<body>
+    <div class="mobile">
+        <div class="hours">16</div>
+        <span>:</span>
+        <div class="minutes">04</div>
+        <span>:</span>
+        <div class="seconds">16 </div>
+        <div id="milliseconds">00</div>
+    </div>
+    <div class="clock-type">
+        <div class="active" id="24">24 Hours</div>
+        <div id="12">12 Hours</div>
+    </div>
+    <script>
+function padZero(number) {
+    return number < 10 ? '0' + number : number;
+}
+function formatHours(hours, format) {
+    if (format === '12') {
+        hours = hours % 12 || 12; // Convert to 12-hour format
+    }
+    return padZero(hours);
+}
+function updateTime() {
+    let dt = new Date();
+    let format = document.querySelector('.active').id;
+    let hrs = formatHours(dt.getHours(), format);
+    let mins = padZero(dt.getMinutes());
+    let secs = padZero(dt.getSeconds());
+    let millis = padZero(Math.floor(dt.getMilliseconds() / 10)); // Milliseconds in two digits
+    document.querySelector('.hours').innerHTML = hrs;
+    document.querySelector('.minutes').innerHTML = mins;
+    document.querySelector('.seconds').innerHTML = secs;
+    document.querySelector('#milliseconds').innerHTML = millis;
+    requestAnimationFrame(updateTime); // Continuously update the time
+}
+function switchFormat(event) {
+    document.querySelector('.active').classList.remove('active');
+    event.target.classList.add('active');
+    updateTime(); // Update time immediately on format switch
+}
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    }
+}
+document.getElementById('24').addEventListener('click', switchFormat);
+document.getElementById('12').addEventListener('click', switchFormat);
+document.addEventListener('click', toggleFullScreen);
+requestAnimationFrame(updateTime); // Start the time updates
+    </script>
+</body>
+</html>
